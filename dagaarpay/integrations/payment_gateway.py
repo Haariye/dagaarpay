@@ -10,16 +10,16 @@ def preauthorize_payment(doc, method):
         "channelName": "WEB",
         "serviceName": "API_PREAUTHORIZE",
         "serviceParams": {
-            "merchantUid": "M0912269",
-            "apiUserId": "1000297",
-            "apiKey": "API-1901083745AHX",
+            "merchantUid": "M0913693",
+            "apiUserId": "1007573",
+            "apiKey": "API-93203879AHX",
             "paymentMethod": "MWALLET_ACCOUNT",
             "payerInfo": {
-                "accountNo": doc.account_no  # Assuming account number is stored in a custom field in the document
+                "accountNo": doc.terms  # Assuming account number is stored in a custom field in the document
             },
             "transactionInfo": {
                 "referenceId": doc.name,  # Use the document name or a custom reference
-                "invoiceId": doc.invoice_no,  # Assuming invoice ID is stored in the document
+                "invoiceId": doc.name,  # Assuming invoice ID is stored in the document
                 "amount": doc.grand_total,  # Total amount to be paid
                 "currency": doc.currency,
                 "description": doc.remarks or "Payment Description",  # Payment description
