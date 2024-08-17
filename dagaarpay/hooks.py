@@ -122,13 +122,11 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+    "Sales Invoice": {
+        "before_submit": "dagaarpay.dagaarpay.integrations.payment_gateway.preauthorize_payment"
+    }
+}
 
 # Scheduled Tasks
 # ---------------
